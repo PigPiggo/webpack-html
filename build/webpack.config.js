@@ -16,16 +16,29 @@ module.exports = {
         ]
       }, 
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.s[ac]ss$/,
         use: [
           // 将 JS 字符串生成为 style 节点
           "style-loader",
           // 将 CSS 转化成 CommonJS 模块
-          "css-loader",
+          {
+            loader: 'css-loader', 
+            options: {
+              importLoaders: 2,
+              modules: true
+            }
+          }, 
           // 将 Sass 编译成 CSS
           "sass-loader",
+          "postcss-loader"
         ],
       },
+      {
+        test: /.less$/i, 
+        use: [
+          "style-loader", "css-loader", "less-loader"
+        ]
+      }
     ]
   }
 }
