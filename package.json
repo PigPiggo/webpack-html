@@ -6,17 +6,22 @@
   "author": "任天祥 <rentianxiang@casit.com.cn>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config build/webpack.config.js"
+    "build": "webpack --env NODE_ENV=production --config build/webpack.config.js",
+    "dev": "webpack serve --env NODE_ENV=development --config build/webpack.config.js"
   },
   "devDependencies": {
     "css-loader": "^5.0.2",
+    "html-webpack-plugin": "^5.1.0",
     "less": "^4.1.1",
     "less-loader": "^8.0.0",
+    "mini-css-extract-plugin": "^1.3.7",
+    "node-sass": "^5.0.0",
     "postcss-loader": "^5.0.0",
     "sass": "^1.32.7",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.22.0",
-    "webpack-cli": "^4.5.0"
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }

@@ -1,4 +1,3 @@
 import "./style.scss"
-import aa from './aa'
 
-console.log (aa); 
+console.log(111);
