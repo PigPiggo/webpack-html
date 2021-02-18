@@ -18,19 +18,13 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: [
+
           // 将 JS 字符串生成为 style 节点
           "style-loader",
           // 将 CSS 转化成 CommonJS 模块
-          {
-            loader: 'css-loader', 
-            options: {
-              importLoaders: 2,
-              modules: true
-            }
-          }, 
+          'css-loader', 
           // 将 Sass 编译成 CSS
           "sass-loader",
-          "postcss-loader"
         ],
       },
       {
